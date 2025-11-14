@@ -25,7 +25,7 @@ View your app in AI Studio: https://ai.studio/apps/drive/1Tly7fNVZ6NiEM9-KkDJW5m
 2. Import your repository to Vercel
 3. **Important**: In Vercel dashboard, go to Settings → Environment Variables and add:
    - Variable name: `GEMINI_API_KEY`
-   - Value: Your Gemini API key (e.g., `AIzaSyDQrT3GqZJzOvyWP_lvH6Z9qeKCgZ3oHL4`)
+   - Value: Your Gemini API key (e.g., ``)
    - Environment: Production, Preview, and Development (select all)
 4. Deploy!
 
