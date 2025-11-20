@@ -1,32 +1,37 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# IconGenius
 
-# Run and deploy your AI Studio app
+IconGenius is an AI-powered web application that creates professional app icon sets using natural language prompts. By leveraging Google's Gemini API (specifically the Imagen generation models), it transforms simple text descriptions into complete, ready-to-deploy asset packages for mobile and web applications.
 
-This contains everything you need to run your app locally.
+## Features
 
-View your app in AI Studio: https://ai.studio/apps/drive/1Tly7fNVZ6NiEM9-KkDJW5mlCyKpr-DZr
+- **Complete Asset Generation**: From a single prompt, the application generates:
+  - **Standard Icons**: 4 unique variations suitable for App Store/Play Store listings.
+  - **Favicon**: A simplified version optimized for web browser tabs.
+  - **Adaptive Icons**: Separated foreground and background layers (Android standard).
+  - **Splash Screen**: A vertical (9:16) launch screen layout.
+- **Style Customization**: Support for multiple design aesthetics including:
+  - Flat, 3D, Minimalist, Gradient, Neumorphic, Line Art, Abstract, Cartoon, and Watercolor.
+- **Smart Previews**: Visualize how your adaptive icons and splash screens will look in context before exporting.
+- **History Management**: Automatically saves your generation history to local storage.
+- **One-Click Export**: Download individual assets or bundle the entire set into a ZIP file.
 
-## Run Locally
+## Tech Stack
 
-**Prerequisites:**  Node.js
+- **Frontend**: React 19
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **AI Integration**: Google GenAI SDK (`@google/genai`)
+- **Model**: `imagen-4.0-generate-001`
+- **Utilities**: JSZip for client-side file bundling
 
+## Usage
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+1. **Enter a Prompt**: Describe your app idea (e.g., "A futuristic rocket ship for a productivity app").
+2. **Select a Style**: Choose a visual style that fits your brand from the dropdown menu.
+3. **Generate**: Click the **Generate** button. The AI will create a favicon, standard icons, adaptive layers, and a splash screen in parallel.
+4. **Review**: Use the preview sections to inspect the generated assets.
+5. **Download**: Click the download icon on any image to save it, or use the **Download All (.zip)** button to get the complete package.
 
-## Deploy to Vercel
+## Requirements
 
-1. Push your code to GitHub
-2. Import your repository to Vercel
-3. **Important**: In Vercel dashboard, go to Settings → Environment Variables and add:
-   - Variable name: `GEMINI_API_KEY`
-   - Value: Your Gemini API key (e.g., ``)
-   - Environment: Production, Preview, and Development (select all)
-4. Deploy!
-
-The API key is now securely stored server-side and will not be exposed in the client bundle.
+This application requires a valid Google Gemini API Key with access to Imagen models. The key must be provided via the `process.env.API_KEY` environment variable.
